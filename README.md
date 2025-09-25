@@ -7,4 +7,4 @@ For now, head over to the [Discussions](https://github.com/WilliamsGDC/GDC-Platf
 
 When the core features have been decided, they will be added to the Projects tab and will be integrated by the Implementation Team.
 
-[**GO SUGGEST IDEAS !!!**](https://github.com/WilliamsGDC/GDC-Platformer/discussions)
+# [**GO SUGGEST IDEAS !!!**](https://github.com/WilliamsGDC/GDC-Platformer/discussions)

@@ -1,20 +1,57 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerKilled : MonoBehaviour
 {
     [Header("Respawn Settings")]
     public Transform respawnPoint;
 
+    [Header("Health Settings")]
+    public int maxHP = 6;
+    private int currentHP;
+
+    [Header("UI")]
+    public Slider hpSlider;
+    public Image healthStatusImage; // UI image to change
+    public Sprite fullHealthSprite;
+    public Sprite highHealthSprite;
+    public Sprite lowHealthSprite;
+    public Sprite deadSprite;
+
     private Rigidbody2D rb;
+    private bool isDead = false;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
+    private void Start()
+    {
+        currentHP = maxHP;
+        UpdateHealthUI();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("KillZone"))
+        if (collision.CompareTag("KillZone") && !isDead)
+        {
+            TakeDamage(1);
+        }
+    }
+
+    private void TakeDamage(int amount)
+    {
+        currentHP -= amount;
+        currentHP = Mathf.Clamp(currentHP, 0, maxHP);
+
+        UpdateHealthUI();
+
+        if (currentHP <= 0)
+        {
+            Die();
+        }
+        else
         {
             Respawn();
         }
@@ -22,8 +59,46 @@ public class PlayerKilled : MonoBehaviour
 
     private void Respawn()
     {
-        // Reset pos
         transform.position = respawnPoint.position;
         rb.linearVelocity = Vector2.zero;
+        rb.angularVelocity = 0f;
+    }
+
+    private void Die()
+    {
+        isDead = true;
+        Debug.Log("you are die");
+        gameObject.SetActive(false);
+    }
+
+    private void UpdateHealthUI()
+    {
+        if (hpSlider != null)
+        {
+            hpSlider.maxValue = maxHP;
+            hpSlider.value = currentHP;
+        }
+
+        if (healthStatusImage != null)
+        {
+            float hpPercent = (float)currentHP / maxHP;
+
+            if (currentHP <= 0)
+            {
+                healthStatusImage.sprite = deadSprite;
+            }
+            else if (hpPercent >= 0.9f)
+            {
+                healthStatusImage.sprite = fullHealthSprite;
+            }
+            else if (hpPercent >= 0.4f)
+            {
+                healthStatusImage.sprite = highHealthSprite;
+            }
+            else
+            {
+                healthStatusImage.sprite = lowHealthSprite;
+            }
+        }
     }
 }

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5486490060682598337}
   - component: {fileID: 4540748842378504192}
   - component: {fileID: 8584212657681445460}
-  m_Layer: 4
+  m_Layer: 3
   m_Name: UnstablePlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -344,7 +344,7 @@ GameObject:
   - component: {fileID: 5072685588003477280}
   - component: {fileID: 4609735773325804285}
   - component: {fileID: 5014295723418262817}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Particle System (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections.Generic;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -22,6 +21,13 @@ public class PlayerMovement : MonoBehaviour
     public float groundRadius = 0.2f;
     public LayerMask groundLayer;
 
+    [Header("Dash Settings")]
+    public float dashSpeed = 20f;
+    public float dashDuration = 0.2f;
+    private bool hasDashed = false;
+    private bool isDashing = false;
+    private float dashTimeLeft;
+
     private Rigidbody2D rb;
 
     private float horizontalInput;
@@ -30,7 +36,6 @@ public class PlayerMovement : MonoBehaviour
     private float jumpBufferCounter;
 
     private float velocityXSmoothing;
-    private Vector2 currentVelocity;
 
     public void Initialize()
     {
@@ -38,7 +43,6 @@ public class PlayerMovement : MonoBehaviour
         rb = player.rb;
 
         initialized = true;
-        //spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -49,6 +53,12 @@ public class PlayerMovement : MonoBehaviour
 
         // Ground check
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, groundLayer);
+
+        // Reset dash on landing
+        if (isGrounded && !isDashing)
+        {
+            hasDashed = false;
+        }
 
         // Coyote time
         if (isGrounded)
@@ -69,14 +79,30 @@ public class PlayerMovement : MonoBehaviour
             jumpBufferCounter = 0f;
         }
 
+        // Dash
+        if (Input.GetMouseButtonDown(1) && !isGrounded && !hasDashed && !isDashing)
+        {
+            StartDash();
+        }
+
+        // Dash Timer
+        if (isDashing)
+        {
+            dashTimeLeft -= Time.deltaTime;
+            if (dashTimeLeft <= 0)
+            {
+                EndDash();
+            }
+        }
+
         // Variable jump height
-        if (rb.linearVelocity.y > 0 && !Input.GetButton("Jump"))
+        if (rb.linearVelocity.y > 0 && !Input.GetButton("Jump") && !isDashing)
         {
             rb.linearVelocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
         }
 
         // Better fall
-        if (rb.linearVelocity.y < 0)
+        if (rb.linearVelocity.y < 0 && !isDashing)
         {
             rb.linearVelocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
         }
@@ -84,11 +110,29 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!initialized) return;
+        if (!initialized || isDashing) return;
 
         float targetVelocityX = horizontalInput * moveSpeed;
         float smoothedX = Mathf.SmoothDamp(rb.linearVelocity.x, targetVelocityX, ref velocityXSmoothing, acceleration);
         rb.linearVelocity = new Vector2(smoothedX, rb.linearVelocity.y);
+    }
+
+    private void StartDash()
+    {
+        isDashing = true;
+        hasDashed = true;
+        dashTimeLeft = dashDuration;
+
+        // Keep horizontal direction, no vertical motion
+        float dashDirection = horizontalInput != 0 ? horizontalInput : transform.localScale.x;
+        rb.linearVelocity = new Vector2(dashDirection * dashSpeed, 0f); // no Y velocity to prevent falling
+    }
+
+    private void EndDash()
+    {
+        isDashing = false;
+        // Optionally reset velocity to prevent excess speed carryover
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x * 0.5f, rb.linearVelocity.y);
     }
 
     private void OnDrawGizmosSelected()

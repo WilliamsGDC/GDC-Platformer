@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 public class PlayerKilled : MonoBehaviour
 {
+    // this should be integrated with the main player script first if new functionality needs to be added
     [Header("Respawn Settings")]
     public Transform respawnPoint;
 

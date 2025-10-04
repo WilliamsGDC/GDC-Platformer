@@ -219,19 +219,6 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -1172,49 +1159,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Cave - SmallRocks_0: 7755263233434312463
-      Cave - SmallRocks_1: -1657484560502174974
-      Cave - SmallRocks_10: 4001769570858825416
-      Cave - SmallRocks_11: 6619780215846458576
-      Cave - SmallRocks_12: -6780921859273498462
-      Cave - SmallRocks_13: 3972064782094023837
-      Cave - SmallRocks_14: -435026583393288548
-      Cave - SmallRocks_15: 6908018799353086255
-      Cave - SmallRocks_16: 219891711605049466
-      Cave - SmallRocks_17: 7596291645957389264
-      Cave - SmallRocks_18: -6556686012822432966
-      Cave - SmallRocks_19: 8109085204081165132
-      Cave - SmallRocks_2: -2493821621276057831
-      Cave - SmallRocks_20: -4216743843403275318
-      Cave - SmallRocks_21: 6103445529309287433
-      Cave - SmallRocks_22: -1320595519569820478
-      Cave - SmallRocks_23: 8541332004995060163
-      Cave - SmallRocks_24: 8500976528667564117
-      Cave - SmallRocks_25: -6862066918451617320
-      Cave - SmallRocks_26: 1517956474383640410
-      Cave - SmallRocks_27: -3200442162793432106
-      Cave - SmallRocks_28: -1439979144534480287
-      Cave - SmallRocks_29: -601573385548399128
-      Cave - SmallRocks_3: -4494004569107490680
-      Cave - SmallRocks_30: -4352259581043777614
-      Cave - SmallRocks_31: -5963559693477244749
-      Cave - SmallRocks_32: -3016530619638483621
-      Cave - SmallRocks_33: -7962708039751616428
-      Cave - SmallRocks_34: -4801642061339153062
-      Cave - SmallRocks_35: 645577906521585614
-      Cave - SmallRocks_36: -6013813440602047623
-      Cave - SmallRocks_37: -2979857049886536812
-      Cave - SmallRocks_38: 3469940636223747940
-      Cave - SmallRocks_39: 2070977477592778985
-      Cave - SmallRocks_4: -5975487952307293109
-      Cave - SmallRocks_40: 8780775113214877956
-      Cave - SmallRocks_41: -2177050145984206322
-      Cave - SmallRocks_5: 6575958154038825118
-      Cave - SmallRocks_6: -7860321058049874662
-      Cave - SmallRocks_7: 8417261638804700597
-      Cave - SmallRocks_8: -5111709473936583927
-      Cave - SmallRocks_9: -6393851943515811214
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

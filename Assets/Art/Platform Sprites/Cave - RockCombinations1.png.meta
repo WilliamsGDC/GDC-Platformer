@@ -144,6 +144,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -534,7 +547,24 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Cave - RockCombinations1_0: -3682156335150797254
+      Cave - RockCombinations1_1: -3536965220430970956
+      Cave - RockCombinations1_10: 1773669622375855222
+      Cave - RockCombinations1_11: 3508485790637871957
+      Cave - RockCombinations1_12: 3636872376884882792
+      Cave - RockCombinations1_13: 9089468503510331075
+      Cave - RockCombinations1_14: -2961241042903359879
+      Cave - RockCombinations1_15: -3610483893686500673
+      Cave - RockCombinations1_16: 8127160317320447058
+      Cave - RockCombinations1_2: -5677102580950192972
+      Cave - RockCombinations1_3: -4376264198830113516
+      Cave - RockCombinations1_4: 2370744232130491520
+      Cave - RockCombinations1_5: -4957315558633417176
+      Cave - RockCombinations1_6: 1468820117789975543
+      Cave - RockCombinations1_7: 6967650150400871907
+      Cave - RockCombinations1_8: -8009313247971963356
+      Cave - RockCombinations1_9: 790362416303558209
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

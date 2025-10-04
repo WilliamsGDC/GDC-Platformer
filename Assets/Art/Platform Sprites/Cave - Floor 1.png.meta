@@ -171,6 +171,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -759,7 +772,33 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Cave - Floor 1_0: 6909801682495353867
+      Cave - Floor 1_1: 7627277258442809218
+      Cave - Floor 1_10: -8514780733135963952
+      Cave - Floor 1_11: 6656154138162333729
+      Cave - Floor 1_12: -6159371107398910493
+      Cave - Floor 1_13: -586256704850758054
+      Cave - Floor 1_14: 6654132633052121755
+      Cave - Floor 1_15: 2349055373192871576
+      Cave - Floor 1_16: 1282229669595411256
+      Cave - Floor 1_17: 2110800999453043587
+      Cave - Floor 1_18: 4222796936996310384
+      Cave - Floor 1_19: 6498728072482063027
+      Cave - Floor 1_2: -7632934552416718291
+      Cave - Floor 1_20: -7538288997837639851
+      Cave - Floor 1_21: -3245165413455441626
+      Cave - Floor 1_22: 2100122142207719449
+      Cave - Floor 1_23: -787783776828437266
+      Cave - Floor 1_24: -2980887430921539615
+      Cave - Floor 1_25: -9043522032192657389
+      Cave - Floor 1_3: -4815248212683594635
+      Cave - Floor 1_4: -7209974887461964516
+      Cave - Floor 1_5: 8135072074343873656
+      Cave - Floor 1_6: -3687227530924678232
+      Cave - Floor 1_7: 8982881411310297276
+      Cave - Floor 1_8: 4418576785033949725
+      Cave - Floor 1_9: 1540309191149982548
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

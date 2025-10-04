@@ -123,6 +123,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -359,7 +372,17 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Cave - BigRocks1_0: 4420416242603121876
+      Cave - BigRocks1_1: 3917231834981698172
+      Cave - BigRocks1_2: -323036006449832048
+      Cave - BigRocks1_3: -1178018390583475805
+      Cave - BigRocks1_4: 3714807935714138745
+      Cave - BigRocks1_5: 6036110616325237527
+      Cave - BigRocks1_6: -8733773345293251420
+      Cave - BigRocks1_7: -4055658321647854206
+      Cave - BigRocks1_8: -3834839354536260602
+      Cave - BigRocks1_9: -9216738602167250781
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

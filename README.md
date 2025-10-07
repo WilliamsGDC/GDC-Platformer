@@ -14,11 +14,9 @@ Head over to the [Discussions](https://github.com/WilliamsGDC/GDC-Platformer/dis
 5. Open this folder in Unity Hub by pressing "Add" > "Add project from disk"
 
 ### Add changes
-6. Press "Fetch Origin" **IMPORTANT: ALWAYS do this before working on changes. This gets the most recent information from github, so you won't conflict with anyone else's changes.**
-7. Comment "I will work on this" or something similar on a feature that was recommended in the [issues tab](https://github.com/WilliamsGDC/GDC-Platformer/issues), or describe your change in a new entry. Please be descriptive! 
-8. If you are modifying a SCENE or PREFAB directly, create an entry here: https://docs.google.com/spreadsheets/d/1Ca5Iv3jNn5prLmtte_p4Kek2ZDbPyR-Vtkm9l6l553M/edit?usp=sharing. Once you are done, remove the entry. If someone is already modifying a scene that you want to modify, no worries! Create a copy of that scene and add your changes accordingly, they can be merged together later.
-9. Make your changes!
-10. Press "Commit to (branch name)" and keep pressing the blue box that shows up in the middle of the screen. It should eventually ask you to create a pull request.
-11. Done!
+1. Press "Fetch Origin" **IMPORTANT: ALWAYS do this before working on changes. This gets the most recent information from github, so you won't conflict with anyone else's changes.**
+4. Make your changes!
+5. Press "Commit to (branch name)" and keep pressing the blue box that shows up in the middle of the screen. It should eventually ask you to create a pull request.
+6. Done!
 
 In general, don't be afraid to refactor, just keep in mind that scenes and prefabs are REALLY HARD TO MERGE :(. Also try your best to regularly push & pull request, once per feature.

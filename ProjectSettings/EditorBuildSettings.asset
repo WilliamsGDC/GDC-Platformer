@@ -8,6 +8,15 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Game.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/Demo.unity
+    guid: d23e295cdf33e644cb99ac80594ce2bb
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 6a3461f3d75c163478e058b2334396d3
+  - enabled: 1
+    path: Assets/Scenes/ProceduralPerlinPlatformerTest.unity
+    guid: 1d6c754ea31d33140b6f62969754f411
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

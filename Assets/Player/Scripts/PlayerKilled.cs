@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerKilled : MonoBehaviour
 {
@@ -18,9 +19,12 @@ public class PlayerKilled : MonoBehaviour
     public Sprite highHealthSprite;
     public Sprite lowHealthSprite;
     public Sprite deadSprite;
+    public GameOverScreenManager GameOverScreenManager;
 
     private Rigidbody2D rb;
     private bool isDead = false;
+
+    int score = 0; // add score to be displayed on GameOverScreen
 
     private void Awake()
     {
@@ -67,8 +71,8 @@ public class PlayerKilled : MonoBehaviour
 
     private void Die()
     {
+        GameOverScreenManager.Setup(score);
         isDead = true;
-        Debug.Log("you are die");
         gameObject.SetActive(false);
     }
 

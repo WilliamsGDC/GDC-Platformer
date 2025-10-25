@@ -14903,7 +14903,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 359555376616052168, guid: 4cc776a2200691d4299a5171dbcc3240, type: 3}
       propertyPath: m_text
-      value: this does not scroll
+      value: 'this does not scroll
+
+
+        AmNotAGoose, Vortex2032, usun-user,
+        imposter100 ...'
       objectReference: {fileID: 0}
     - target: {fileID: 359555376616052168, guid: 4cc776a2200691d4299a5171dbcc3240, type: 3}
       propertyPath: m_fontSize

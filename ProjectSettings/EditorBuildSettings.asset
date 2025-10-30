@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ProceduralPerlinPlatformerTest.unity
     guid: 1d6c754ea31d33140b6f62969754f411
+  - enabled: 1
+    path: Assets/Scenes/The Sinkhole.unity
+    guid: d620646b3cd9db94fadf76ef3c5e7b6f
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

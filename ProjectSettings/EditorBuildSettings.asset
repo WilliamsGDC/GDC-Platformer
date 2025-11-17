@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Game.unity
     guid: 6f3aa8d217c3a094db5106c5e0e4ea2d
   - enabled: 1
-    path: Assets/Scenes/Demo-Lava.unity
+    path: Assets/Scenes/Currently Unused/Demo-Lava.unity
     guid: d23e295cdf33e644cb99ac80594ce2bb
   - enabled: 1
     path: Assets/Scenes/Tutorial-Sinkhole.unity

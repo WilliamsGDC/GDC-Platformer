@@ -8,10 +8,12 @@ public class LevelManager : MonoBehaviour
 {
     public static LevelManager Instance { get; private set; }
 
-    public Level currentLevel;
-    public List<string> loadedScenes = new();
+    public List<string> firstScenesToLoad;
 
+    public List<string> loadedScenes = new();
     public Queue<Level> levelsToLoadQueue = new();
+
+    public bool isProcessingQueue = false;
 
     private void Awake()
     {
@@ -26,6 +28,11 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        StartCoroutine(LoadLevels(firstScenesToLoad));
+    }
+
     public void QueueLoadSurroundingLevels(Level level)
     {
         levelsToLoadQueue.Enqueue(level);
@@ -34,18 +41,24 @@ public class LevelManager : MonoBehaviour
 
     public IEnumerator ProcessLevels()
     {
+        if (isProcessingQueue) yield break;
+        isProcessingQueue = true;
+
         while (levelsToLoadQueue.Count > 0)
         {
             Level levelToLoad = levelsToLoadQueue.Dequeue();
-            yield return StartCoroutine(LoadSurroundingLevels(levelToLoad));
+            yield return StartCoroutine(LoadLevels(levelToLoad.connectedSceneNames));
         }
+
+        isProcessingQueue = false;
     }
 
-    public IEnumerator LoadSurroundingLevels(Level level)
+    // loads surrounding levels and deloads ones which no longer surround
+    public IEnumerator LoadLevels(List<string> sceneNames)
     {
         List<string> shouldBeLoaded = new();
 
-        foreach (string scene in level.connectedScenes)
+        foreach (string scene in sceneNames)
         {
             if (!SceneManager.GetSceneByName(scene).isLoaded)
             {

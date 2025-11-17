@@ -17,7 +17,7 @@ public class PlayerVisuals : MonoBehaviour
     private bool isFacingRight;
 
     public void Initialize()
-    {
+    {   
         player = GetComponentInParent<Player>();
         animator = GetComponent<Animator>();
 

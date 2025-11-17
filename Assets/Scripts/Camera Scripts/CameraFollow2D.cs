@@ -8,6 +8,21 @@ public class CameraFollow2D : MonoBehaviour
 
     private Vector3 velocity = Vector3.zero;
 
+    public static CameraFollow2D Instance { get; private set; }
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
     void LateUpdate()
     {
         if (followTarget == null) return;

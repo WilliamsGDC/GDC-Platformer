@@ -27,8 +27,13 @@ public class MenuManager : MonoBehaviour
         }
     }
 
-    public void ChangeScene(Scene _scene)
+    public void ReloadCurrentScene()
     {
-        SceneManager.LoadScene(nameof(_scene));
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void ChangeScene(string sceneName) // Unity inspector doesn't allow non-primitive types (like scenes which are objects)
+    {
+        SceneManager.LoadScene(sceneName);
     }
 }

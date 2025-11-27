@@ -598,7 +598,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1624883773}
+  - {fileID: 827365976}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &66105639
@@ -2213,7 +2215,7 @@ GameObject:
   - component: {fileID: 827276324}
   - component: {fileID: 827276323}
   m_Layer: 5
-  m_Name: quit
+  m_Name: QuitQuestionPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2268,7 +2270,7 @@ GameObject:
   - component: {fileID: 827365975}
   - component: {fileID: 827365974}
   m_Layer: 0
-  m_Name: Audio Source (1)
+  m_Name: Audio Source - Hover
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2402,12 +2404,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 827365973}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.0231179, y: 0.44232735, z: -3.2614968}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.0231179, y: 0.44232735, z: 6.7385035}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 66105638}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &839452400
 GameObject:
@@ -8276,7 +8278,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: no  kil yourslef
+  m_text: Are you sure you want to quit?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8384,7 +8386,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 359555376616052168, guid: 4cc776a2200691d4299a5171dbcc3240, type: 3}
       propertyPath: m_text
-      value: you  shall not pass
+      value: YES - Quit
       objectReference: {fileID: 0}
     - target: {fileID: 359555376616052168, guid: 4cc776a2200691d4299a5171dbcc3240, type: 3}
       propertyPath: m_fontSize
@@ -8492,7 +8494,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6474071728980808569, guid: 4cc776a2200691d4299a5171dbcc3240, type: 3}
       propertyPath: m_Name
-      value: Scrolling Credits Placeholder
+      value: QuitButton
       objectReference: {fileID: 0}
     - target: {fileID: 8448700123509829917, guid: 4cc776a2200691d4299a5171dbcc3240, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.a
@@ -8881,7 +8883,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 359555376616052168, guid: 4cc776a2200691d4299a5171dbcc3240, type: 3}
       propertyPath: m_text
-      value: Return
+      value: NO - Return
       objectReference: {fileID: 0}
     - target: {fileID: 359555376616052168, guid: 4cc776a2200691d4299a5171dbcc3240, type: 3}
       propertyPath: m_fontSize
@@ -8989,7 +8991,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6474071728980808569, guid: 4cc776a2200691d4299a5171dbcc3240, type: 3}
       propertyPath: m_Name
-      value: return
+      value: ReturnButton
       objectReference: {fileID: 0}
     - target: {fileID: 8448700123509829917, guid: 4cc776a2200691d4299a5171dbcc3240, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.a
@@ -9525,7 +9527,7 @@ GameObject:
   - component: {fileID: 1624883772}
   - component: {fileID: 1624883771}
   m_Layer: 0
-  m_Name: Audio Source
+  m_Name: Audio Source - Rain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9659,12 +9661,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1624883770}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.0231179, y: 0.44232735, z: -3.2614968}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.0231179, y: 0.44232735, z: 6.7385035}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 66105638}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1639552263
 MonoBehaviour:
@@ -9691,7 +9693,7 @@ GameObject:
   - component: {fileID: 1747849265}
   - component: {fileID: 1747849264}
   m_Layer: 0
-  m_Name: Manager
+  m_Name: Menu Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15212,5 +15214,3 @@ SceneRoots:
   - {fileID: 1747849265}
   - {fileID: 1960692179}
   - {fileID: 872584900}
-  - {fileID: 1624883773}
-  - {fileID: 827365976}

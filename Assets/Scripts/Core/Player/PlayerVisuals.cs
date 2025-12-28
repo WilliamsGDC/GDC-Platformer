@@ -3,7 +3,10 @@ using UnityEngine;
 public class PlayerVisuals : MonoBehaviour
 {
     private Player player;
-    private bool initialized = false;
+    private bool initialized;
+
+    [Header("PlayerMovement Script")]
+    public PlayerMovement movementScript;
 
     [Header("Main Body Animation")]
     public Animator animator;
@@ -30,7 +33,8 @@ public class PlayerVisuals : MonoBehaviour
     {
         if (!initialized) return;
 
-        horizontalInput = Input.GetAxisRaw("Horizontal");
+        horizontalInput = movementScript.horizontalInput;
+        //horizontalInput = Input.GetAxisRaw("Horizontal");
         
         if (!(horizontalInput == 0)) // moving
         {

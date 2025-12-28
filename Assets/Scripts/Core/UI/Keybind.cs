@@ -1,44 +1,78 @@
 using UnityEngine;
 using TMPro;
-using System;
+using UnityEngine.InputSystem;
 
 public class Keybind : MonoBehaviour
 {
+    [Header("References")]
+    [SerializeField] InputActionReference actionReference;
+    [SerializeField] PlayerMovement movementScript;
     [SerializeField] TextMeshProUGUI label;
-    [SerializeField] string keybindName;
 
-    //This code has not been finished at all yet. It will be fixed in the future
-    /*
-    private void Start()
-    {
-        if (PlayerPrefs.HasKey(keybindName))
-        {
-            label.text = PlayerPrefs.GetString(keybindName);
-        } else
-        {
-            PlayerPrefs.SetString(keybindName, label.text);
-        }
-    }
+    [Header("Composite Binding Settings")]
+    [Header("If this action is part of a composite (like Move/WASD/Left), set this to the name of the part, with the first letter lowercase (left).")]
+    [Header("Leave empty for single bindings.")]
+    [SerializeField] string nameOfCompositeKeybind;
 
-    private void Update()
+    private InputActionRebindingExtensions.RebindingOperation rebindingOperation;
+
+    public void StartRebinding()
     {
-        if (label.text == "Awaiting Input")
+        label.text = "Awaiting input";
+
+        // Switch to the rebinding-friendly action map
+        movementScript.PlayerInput.SwitchCurrentActionMap("InputPause");
+
+        // Find the binding index
+        int bindingIndex = -1;
+
+        // Check if the keybind is a composite part
+        if (!string.IsNullOrEmpty(nameOfCompositeKeybind))
         {
-            foreach (KeyCode keycode in Enum.GetValues(typeof(KeyCode)))
+            // Look for the composite part
+            for (int i = 0; i < actionReference.action.bindings.Count; i++)
             {
-                if (Input.GetKey(keycode))
+                var binding = actionReference.action.bindings[i];
+                //if (binding.isPartOfComposite && binding.name == nameOfCompositeKeybind)
+                if (binding.name == nameOfCompositeKeybind)
                 {
-                    label.text = keycode.ToString();
-                    PlayerPrefs.SetString(keybindName, keycode.ToString());
-                    PlayerPrefs.Save();
+                    bindingIndex = i;
+                    break;
                 }
             }
         }
+        else
+        {
+            // Normal single binding: pick the first binding
+            if (actionReference.action.bindings.Count > 0)
+                bindingIndex = 0;
+        }
+
+        if (bindingIndex == -1)
+        {
+            Debug.LogError("Could not find binding " + nameOfCompositeKeybind + " in action " + actionReference.action.name);
+            return;
+        }
+
+        rebindingOperation = actionReference.action.PerformInteractiveRebinding()
+            .WithTargetBinding(bindingIndex)
+            .OnMatchWaitForAnother(0.1f)
+            .OnComplete(operation => RebindComplete(bindingIndex))
+            .Start();  
     }
 
-    public void ChangeKey()
+    private void RebindComplete(int bindingIndex)
     {
-        label.text = "Awaiting Input";
+        // Update the label to show the new control
+        label.text = InputControlPath.ToHumanReadableString(
+            actionReference.action.bindings[bindingIndex].effectivePath,
+            InputControlPath.HumanReadableStringOptions.OmitDevice);
+
+        // Clean up the rebinding operation
+        rebindingOperation.Dispose();
+
+        // Switch back to the main action map
+        // This is going to have to be changed in the future because we don't want player to be able to do any moving and such while in settings
+        movementScript.PlayerInput.SwitchCurrentActionMap("Player");
     }
-    */
 }
